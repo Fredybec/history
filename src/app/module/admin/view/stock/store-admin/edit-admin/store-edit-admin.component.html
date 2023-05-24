@@ -1,0 +1,100 @@
+        <p-dialog [(visible)]="editDialog" [style]="{width: '70vw'}" header="{{'storeTabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                <p-tabView>
+                    <p-tabPanel header="{{'storeTabPan' | translate}}">
+                        <div class="grid">
+
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="1">{{'storeLibelle' | translate}}<span style="color: red;">*</span></label>
+                                            <input   appendTo="body" class="mb-2 mr-2" type="text" pInputText placeholder="{{'storeLibelle' | translate}}" id="1" [(ngModel)]="item.libelle"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validStoreLibelle}"  />
+                                            <small class='p-error' *ngIf='!validStoreLibelle'>Libelle est obligatoire.</small>
+                                        </div>
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="2">{{'storeReference' | translate}}<span style="color: red;">*</span></label>
+                                            <input   appendTo="body" class="mb-2 mr-2" type="text" pInputText placeholder="{{'storeReference' | translate}}" id="2" [(ngModel)]="item.reference"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validStoreReference}"  />
+                                            <small class='p-error' *ngIf='!validStoreReference'>Reference est obligatoire.</small>
+                                        </div>
+
+                                    <div class="field col-11 md:col-5">
+                                            <label for="3">{{'storeAbonne' | translate}}</label>
+                                            <p-dropdown   appendTo="body" [options]="abonnes" [(ngModel)]="item.abonne" id="3"[filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true" optionLabel="code" placeholder="{{'storeAbonne' | translate}}"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button" icon="pi pi-plus"  (click)="openCreateAbonne('Abonne')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+
+                        </div>
+                    </p-tabPanel>
+
+                            <p-tabPanel header="{{'Magasins' | translate}}">
+                                        <div class="grid">
+                                            <div class="col">
+                                                            <div class="field col-12 md:col-6">
+                                                                <label for="1">Nom</label>
+                                                                <input appendTo="body" class="mb-2 mr-2" type="text" pInputText placeholder="Nom"
+                                                                       id="1" [(ngModel)]="magasinsElement.nom"
+                                                                       autofocus   >
+                                                                
+                                                            </div>
+                                                            <div class="field col-12 md:col-6">
+                                                                <label for="2">Adresse</label>
+                                                                <input appendTo="body" class="mb-2 mr-2" type="text" pInputText placeholder="Adresse"
+                                                                       id="2" [(ngModel)]="magasinsElement.adresse"
+                                                                       autofocus   >
+                                                                
+                                                            </div>
+                                                <div class="field col-12 md:col-1">
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" class="mt-4" label="OK" (click)="addMagasins()"></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="card">
+                                                <p-table [value]="item.magasins" [scrollable]="true" scrollHeight="200px">
+                                                    <ng-template pTemplate="header">
+                                                        <tr>
+                                                                        <th>Nom</th>
+                                                                        <th>Adresse</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </ng-template>
+                                                    <ng-template pTemplate="body" let-p>
+                                                        <tr>
+                                                                        <td>{{p.nom}}</td>
+                                                                        <td>{{p.adresse}}</td>
+                                                            <td>
+                                                                <button (click)="deleteMagasin(p)" pButton type="button" icon="pi pi-times"  class="p-button-rounded p-button-danger"></button>
+                                                                <button (click)="editMagasin(p)" pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
+                                                            </td>
+                                                        </tr>
+                                                    </ng-template>
+                                                </p-table>
+                                            </div>
+                                        </div>
+                            </p-tabPanel>
+                </p-tabView>
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="grid-footer">
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+                        </div>
+                    <div>
+                        <button pButton pRipple label="Valider" icon="pi pi-check" style="margin:10px" (click)="edit()"></button>
+                    </div>
+                </div>
+            </ng-template>
+
+                    <app-abonne-create-admin></app-abonne-create-admin>
+
+
+    </p-dialog>

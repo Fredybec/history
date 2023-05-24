@@ -1,0 +1,902 @@
+{
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'paiementCommandeHeader': 'Liste des paiement commandes',
+    'searchInput': 'Chercher...',
+    'paiementCommandeTabPan': 'Paiement commande',
+
+
+        'Id': 'Id',
+            'paiementCommandeReference': 'Reference',
+
+        'Reference': 'Reference',
+            'paiementCommandeDatePaiement': 'Date paiement',
+
+        'Date paiement': 'Date paiement',
+            'paiementCommandeMontant': 'Montant',
+
+        'Montant': 'Montant',
+            'paiementCommandeCommande': 'Commande',
+
+        'Commande': 'Commande',
+            'paiementCommandeModePaiement': 'Mode paiement',
+
+        'Mode paiement': 'Mode paiement',
+            'paiementCommandeDescription': 'Description',
+
+        'Description': 'Description',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'categorieProduitHeader': 'Liste des categorie produits',
+    'searchInput': 'Chercher...',
+    'categorieProduitTabPan': 'Categorie produit',
+
+
+        'Id': 'Id',
+            'categorieProduitReference': 'Reference',
+
+        'Reference': 'Reference',
+            'categorieProduitLibelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'demandeHeader': 'Liste des demandes',
+    'searchInput': 'Chercher...',
+    'demandeTabPan': 'Demande',
+
+
+        'Id': 'Id',
+            'demandeProduit': 'Produit',
+
+        'Produit': 'Produit',
+            'demandeClient': 'Client',
+
+        'Client': 'Client',
+            'demandeLivraison': 'Livraison',
+
+        'Livraison': 'Livraison',
+            'demandeMagasin': 'Magasin',
+
+        'Magasin': 'Magasin',
+            'demandeDemandeItems': 'Demande items',
+
+        'Demande items': 'Demande items',
+            'demandePaiementDemandes': 'Paiement demandes',
+
+        'Paiement demandes': 'Paiement demandes',
+            'demandeEtatDemande': 'Etat demande',
+
+        'Etat demande': 'Etat demande',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'avoirAchatItemHeader': 'Liste des avoir achat items',
+    'searchInput': 'Chercher...',
+    'avoirAchatItemTabPan': 'Avoir achat item',
+
+
+        'Id': 'Id',
+            'avoirAchatItemProduit': 'Produit',
+
+        'Produit': 'Produit',
+            'avoirAchatItemMontant': 'Montant',
+
+        'Montant': 'Montant',
+            'avoirAchatItemQuantite': 'Quantite',
+
+        'Quantite': 'Quantite',
+            'avoirAchatItemAvoirAchat': 'Avoir achat',
+
+        'Avoir achat': 'Avoir achat',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'fournisseurHeader': 'Liste des fournisseurs',
+    'searchInput': 'Chercher...',
+    'fournisseurTabPan': 'Fournisseur',
+
+
+        'Id': 'Id',
+            'fournisseurIce': 'Ice',
+
+        'Ice': 'Ice',
+            'fournisseurNom': 'Nom',
+
+        'Nom': 'Nom',
+            'fournisseurTel': 'Tel',
+
+        'Tel': 'Tel',
+            'fournisseurEmail': 'Email',
+
+        'Email': 'Email',
+            'fournisseurAdresse': 'Adresse',
+
+        'Adresse': 'Adresse',
+            'fournisseurDescription': 'Description',
+
+        'Description': 'Description',
+            'fournisseurCreance': 'Creance',
+
+        'Creance': 'Creance',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'commandeItemHeader': 'Liste des commande items',
+    'searchInput': 'Chercher...',
+    'commandeItemTabPan': 'Commande item',
+
+
+        'Id': 'Id',
+            'commandeItemPrix': 'Prix',
+
+        'Prix': 'Prix',
+            'commandeItemQuantite': 'Quantite',
+
+        'Quantite': 'Quantite',
+            'commandeItemQuantiteReceptionne': 'Quantite receptionne',
+
+        'Quantite receptionne': 'Quantite receptionne',
+            'commandeItemProduit': 'Produit',
+
+        'Produit': 'Produit',
+            'commandeItemCommande': 'Commande',
+
+        'Commande': 'Commande',
+            'commandeItemEtatCommande': 'Etat commande',
+
+        'Etat commande': 'Etat commande',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'marqueHeader': 'Liste des marques',
+    'searchInput': 'Chercher...',
+    'marqueTabPan': 'Marque',
+
+
+        'Id': 'Id',
+            'marqueLibelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'marqueCode': 'Code',
+
+        'Code': 'Code',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'storeHeader': 'Liste des stores',
+    'searchInput': 'Chercher...',
+    'storeTabPan': 'Store',
+
+
+        'Id': 'Id',
+            'storeLibelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'storeReference': 'Reference',
+
+        'Reference': 'Reference',
+            'storeAbonne': 'Abonne',
+
+        'Abonne': 'Abonne',
+            'storeMagasins': 'Magasins',
+
+        'Magasins': 'Magasins',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'venteItemHeader': 'Liste des vente items',
+    'searchInput': 'Chercher...',
+    'venteItemTabPan': 'Vente item',
+
+
+        'Id': 'Id',
+            'venteItemProduit': 'Produit',
+
+        'Produit': 'Produit',
+            'venteItemPrixUnitaire': 'Prix unitaire',
+
+        'Prix unitaire': 'Prix unitaire',
+            'venteItemQuantite': 'Quantite',
+
+        'Quantite': 'Quantite',
+            'venteItemRemise': 'Remise',
+
+        'Remise': 'Remise',
+            'venteItemVente': 'Vente',
+
+        'Vente': 'Vente',
+            'venteItemQuantiteAvoir': 'Quantite avoir',
+
+        'Quantite avoir': 'Quantite avoir',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'venteHeader': 'Liste des ventes',
+    'searchInput': 'Chercher...',
+    'venteTabPan': 'Vente',
+
+
+        'Id': 'Id',
+            'venteReference': 'Reference',
+
+        'Reference': 'Reference',
+            'venteDateVente': 'Date vente',
+
+        'Date vente': 'Date vente',
+            'venteTotal': 'Total',
+
+        'Total': 'Total',
+            'venteTotalPaye': 'Total paye',
+
+        'Total paye': 'Total paye',
+            'venteDescription': 'Description',
+
+        'Description': 'Description',
+            'venteClient': 'Client',
+
+        'Client': 'Client',
+            'ventePaiementVentes': 'Paiement ventes',
+
+        'Paiement ventes': 'Paiement ventes',
+            'venteVenteItems': 'Vente items',
+
+        'Vente items': 'Vente items',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'magasinHeader': 'Liste des magasins',
+    'searchInput': 'Chercher...',
+    'magasinTabPan': 'Magasin',
+
+
+        'Id': 'Id',
+            'magasinNom': 'Nom',
+
+        'Nom': 'Nom',
+            'magasinAdresse': 'Adresse',
+
+        'Adresse': 'Adresse',
+            'magasinStore': 'Store',
+
+        'Store': 'Store',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'etatLivraisonHeader': 'Liste des etat livraisons',
+    'searchInput': 'Chercher...',
+    'etatLivraisonTabPan': 'Etat livraison',
+
+
+        'Id': 'Id',
+            'etatLivraisonLibelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'etatLivraisonCode': 'Code',
+
+        'Code': 'Code',
+            'etatLivraisonStyle': 'Style',
+
+        'Style': 'Style',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'produitHeader': 'Liste des produits',
+    'searchInput': 'Chercher...',
+    'produitTabPan': 'Produit',
+
+
+        'Id': 'Id',
+            'produitReference': 'Reference',
+
+        'Reference': 'Reference',
+            'produitLibelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'produitCategorieProduit': 'Categorie produit',
+
+        'Categorie produit': 'Categorie produit',
+            'produitBarcode': 'Barcode',
+
+        'Barcode': 'Barcode',
+            'produitDescription': 'Description',
+
+        'Description': 'Description',
+            'produitPrixAchatMoyen': 'Prix achat moyen',
+
+        'Prix achat moyen': 'Prix achat moyen',
+            'produitQuantite': 'Quantite',
+
+        'Quantite': 'Quantite',
+            'produitSeuilAlert': 'Seuil alert',
+
+        'Seuil alert': 'Seuil alert',
+            'produitUniteMesure': 'Unite mesure',
+
+        'Unite mesure': 'Unite mesure',
+            'produitMarque': 'Marque',
+
+        'Marque': 'Marque',
+            'produitStore': 'Store',
+
+        'Store': 'Store',
+            'produitPhotoProduits': 'Photo produits',
+
+        'Photo produits': 'Photo produits',
+            'produitStockProduits': 'Stock produits',
+
+        'Stock produits': 'Stock produits',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'etatPaiementHeader': 'Liste des etat paiements',
+    'searchInput': 'Chercher...',
+    'etatPaiementTabPan': 'Etat paiement',
+
+
+        'Id': 'Id',
+            'etatPaiementLibelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'etatPaiementCode': 'Code',
+
+        'Code': 'Code',
+            'etatPaiementStyle': 'Style',
+
+        'Style': 'Style',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'livraisonHeader': 'Liste des livraisons',
+    'searchInput': 'Chercher...',
+    'livraisonTabPan': 'Livraison',
+
+
+        'Id': 'Id',
+            'livraisonDemande': 'Demande',
+
+        'Demande': 'Demande',
+            'livraisonDateLivraison': 'Date livraison',
+
+        'Date livraison': 'Date livraison',
+            'livraisonEtatLivraison': 'Etat livraison',
+
+        'Etat livraison': 'Etat livraison',
+            'livraisonLivraisonItems': 'Livraison items',
+
+        'Livraison items': 'Livraison items',
+            'livraisonClient': 'Client',
+
+        'Client': 'Client',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'abonneHeader': 'Liste des abonnes',
+    'searchInput': 'Chercher...',
+    'abonneTabPan': 'Abonne',
+
+
+        'Id': 'Id',
+            'abonneCode': 'Code',
+
+        'Code': 'Code',
+            'abonneAdresse': 'Adresse',
+
+        'Adresse': 'Adresse',
+            'abonneBloqued': 'Bloqued',
+
+        'Bloqued': 'Bloqued',
+            'abonneDateCreation': 'Date creation',
+
+        'Date creation': 'Date creation',
+            'abonneEmail': 'Email',
+
+        'Email': 'Email',
+            'abonneTel': 'Tel',
+
+        'Tel': 'Tel',
+            'abonneLogo': 'Logo',
+
+        'Logo': 'Logo',
+            'abonneNom': 'Nom',
+
+        'Nom': 'Nom',
+            'abonnePrenom': 'Prenom',
+
+        'Prenom': 'Prenom',
+            'abonneNomSociete': 'Nom societe',
+
+        'Nom societe': 'Nom societe',
+            'abonnePathBackUp': 'Path back up',
+
+        'Path back up': 'Path back up',
+            'abonnePatente': 'Patente',
+
+        'Patente': 'Patente',
+            'abonneRc': 'Rc',
+
+        'Rc': 'Rc',
+            'abonneCnss': 'Cnss',
+
+        'Cnss': 'Cnss',
+            'abonneIfisc': 'Ifisc',
+
+        'Ifisc': 'Ifisc',
+            'abonneIce': 'Ice',
+
+        'Ice': 'Ice',
+            'abonneStores': 'Stores',
+
+        'Stores': 'Stores',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'receptionHeader': 'Liste des receptions',
+    'searchInput': 'Chercher...',
+    'receptionTabPan': 'Reception',
+
+
+        'Id': 'Id',
+            'receptionCommande': 'Commande',
+
+        'Commande': 'Commande',
+            'receptionDateReception': 'Date reception',
+
+        'Date reception': 'Date reception',
+            'receptionDescription': 'Description',
+
+        'Description': 'Description',
+            'receptionReceptionItems': 'Reception items',
+
+        'Reception items': 'Reception items',
+            'receptionEtatReception': 'Etat reception',
+
+        'Etat reception': 'Etat reception',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'etatDemandeHeader': 'Liste des etat demandes',
+    'searchInput': 'Chercher...',
+    'etatDemandeTabPan': 'Etat demande',
+
+
+        'Id': 'Id',
+            'etatDemandeLibelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'etatDemandeCode': 'Code',
+
+        'Code': 'Code',
+            'etatDemandeStyle': 'Style',
+
+        'Style': 'Style',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'proprietaireChequeBanqueHeader': 'Liste des proprietaire cheque banques',
+    'searchInput': 'Chercher...',
+    'proprietaireChequeBanqueTabPan': 'Proprietaire cheque banque',
+
+
+        'Id': 'Id',
+            'proprietaireChequeBanqueProprietaireCheque': 'Proprietaire cheque',
+
+        'Proprietaire cheque': 'Proprietaire cheque',
+            'proprietaireChequeBanqueBanque': 'Banque',
+
+        'Banque': 'Banque',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'stockProduitHeader': 'Liste des stock produits',
+    'searchInput': 'Chercher...',
+    'stockProduitTabPan': 'Stock produit',
+
+
+        'Id': 'Id',
+            'stockProduitMagasin': 'Magasin',
+
+        'Magasin': 'Magasin',
+            'stockProduitProduit': 'Produit',
+
+        'Produit': 'Produit',
+            'stockProduitQuantite': 'Quantite',
+
+        'Quantite': 'Quantite',
+            'stockProduitQuantiteDeffecteuse': 'Quantite deffecteuse',
+
+        'Quantite deffecteuse': 'Quantite deffecteuse',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'etatReceptionHeader': 'Liste des etat receptions',
+    'searchInput': 'Chercher...',
+    'etatReceptionTabPan': 'Etat reception',
+
+
+        'Id': 'Id',
+            'etatReceptionLibelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'etatReceptionCode': 'Code',
+
+        'Code': 'Code',
+            'etatReceptionStyle': 'Style',
+
+        'Style': 'Style',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'uniteMesureHeader': 'Liste des unite mesures',
+    'searchInput': 'Chercher...',
+    'uniteMesureTabPan': 'Unite mesure',
+
+
+        'Id': 'Id',
+            'uniteMesureLibelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'uniteMesureCode': 'Code',
+
+        'Code': 'Code',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'demandeItemHeader': 'Liste des demande items',
+    'searchInput': 'Chercher...',
+    'demandeItemTabPan': 'Demande item',
+
+
+        'Id': 'Id',
+            'demandeItemPrix': 'Prix',
+
+        'Prix': 'Prix',
+            'demandeItemProduit': 'Produit',
+
+        'Produit': 'Produit',
+            'demandeItemQuantite': 'Quantite',
+
+        'Quantite': 'Quantite',
+            'demandeItemDemande': 'Demande',
+
+        'Demande': 'Demande',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'avoirVenteHeader': 'Liste des avoir ventes',
+    'searchInput': 'Chercher...',
+    'avoirVenteTabPan': 'Avoir vente',
+
+
+        'Id': 'Id',
+            'avoirVenteDateAvoir': 'Date avoir',
+
+        'Date avoir': 'Date avoir',
+            'avoirVenteMontant': 'Montant',
+
+        'Montant': 'Montant',
+            'avoirVenteVente': 'Vente',
+
+        'Vente': 'Vente',
+            'avoirVenteAvoirVenteItems': 'Avoir vente items',
+
+        'Avoir vente items': 'Avoir vente items',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'paiementVenteHeader': 'Liste des paiement ventes',
+    'searchInput': 'Chercher...',
+    'paiementVenteTabPan': 'Paiement vente',
+
+
+        'Id': 'Id',
+            'paiementVenteReference': 'Reference',
+
+        'Reference': 'Reference',
+            'paiementVenteDatePaiement': 'Date paiement',
+
+        'Date paiement': 'Date paiement',
+            'paiementVenteMontant': 'Montant',
+
+        'Montant': 'Montant',
+            'paiementVenteVente': 'Vente',
+
+        'Vente': 'Vente',
+            'paiementVenteModePaiement': 'Mode paiement',
+
+        'Mode paiement': 'Mode paiement',
+            'paiementVenteDescription': 'Description',
+
+        'Description': 'Description',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'receptionItemHeader': 'Liste des reception items',
+    'searchInput': 'Chercher...',
+    'receptionItemTabPan': 'Reception item',
+
+
+        'Id': 'Id',
+            'receptionItemProduit': 'Produit',
+
+        'Produit': 'Produit',
+            'receptionItemQuantite': 'Quantite',
+
+        'Quantite': 'Quantite',
+            'receptionItemMagasin': 'Magasin',
+
+        'Magasin': 'Magasin',
+            'receptionItemReception': 'Reception',
+
+        'Reception': 'Reception',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'avoirVenteItemHeader': 'Liste des avoir vente items',
+    'searchInput': 'Chercher...',
+    'avoirVenteItemTabPan': 'Avoir vente item',
+
+
+        'Id': 'Id',
+            'avoirVenteItemProduit': 'Produit',
+
+        'Produit': 'Produit',
+            'avoirVenteItemMontantAvoir': 'Montant avoir',
+
+        'Montant avoir': 'Montant avoir',
+            'avoirVenteItemQuantite': 'Quantite',
+
+        'Quantite': 'Quantite',
+            'avoirVenteItemAvoirVente': 'Avoir vente',
+
+        'Avoir vente': 'Avoir vente',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'paiementDemandeHeader': 'Liste des paiement demandes',
+    'searchInput': 'Chercher...',
+    'paiementDemandeTabPan': 'Paiement demande',
+
+
+        'Id': 'Id',
+            'paiementDemandeReference': 'Reference',
+
+        'Reference': 'Reference',
+            'paiementDemandeDatePaiement': 'Date paiement',
+
+        'Date paiement': 'Date paiement',
+            'paiementDemandeMontant': 'Montant',
+
+        'Montant': 'Montant',
+            'paiementDemandeDemande': 'Demande',
+
+        'Demande': 'Demande',
+            'paiementDemandeModePaiement': 'Mode paiement',
+
+        'Mode paiement': 'Mode paiement',
+            'paiementDemandeDescription': 'Description',
+
+        'Description': 'Description',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'proprietaireChequeHeader': 'Liste des proprietaire cheques',
+    'searchInput': 'Chercher...',
+    'proprietaireChequeTabPan': 'Proprietaire cheque',
+
+
+        'Id': 'Id',
+            'proprietaireChequeNom': 'Nom',
+
+        'Nom': 'Nom',
+            'proprietaireChequeCode': 'Code',
+
+        'Code': 'Code',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'avoirAchatHeader': 'Liste des avoir achats',
+    'searchInput': 'Chercher...',
+    'avoirAchatTabPan': 'Avoir achat',
+
+
+        'Id': 'Id',
+            'avoirAchatDateAvoir': 'Date avoir',
+
+        'Date avoir': 'Date avoir',
+            'avoirAchatMontant': 'Montant',
+
+        'Montant': 'Montant',
+            'avoirAchatAchat': 'Achat',
+
+        'Achat': 'Achat',
+            'avoirAchatAvoirAchatItems': 'Avoir achat items',
+
+        'Avoir achat items': 'Avoir achat items',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'paiementAchatHeader': 'Liste des paiement achats',
+    'searchInput': 'Chercher...',
+    'paiementAchatTabPan': 'Paiement achat',
+
+
+        'Id': 'Id',
+            'paiementAchatReference': 'Reference',
+
+        'Reference': 'Reference',
+            'paiementAchatDatePaiement': 'Date paiement',
+
+        'Date paiement': 'Date paiement',
+            'paiementAchatMontant': 'Montant',
+
+        'Montant': 'Montant',
+            'paiementAchatAchat': 'Achat',
+
+        'Achat': 'Achat',
+            'paiementAchatModePaiement': 'Mode paiement',
+
+        'Mode paiement': 'Mode paiement',
+            'paiementAchatDescription': 'Description',
+
+        'Description': 'Description',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'etatCommandeHeader': 'Liste des etat commandes',
+    'searchInput': 'Chercher...',
+    'etatCommandeTabPan': 'Etat commande',
+
+
+        'Id': 'Id',
+            'etatCommandeLibelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'etatCommandeCode': 'Code',
+
+        'Code': 'Code',
+            'etatCommandeStyle': 'Style',
+
+        'Style': 'Style',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'livraisonItemHeader': 'Liste des livraison items',
+    'searchInput': 'Chercher...',
+    'livraisonItemTabPan': 'Livraison item',
+
+
+        'Id': 'Id',
+            'livraisonItemProduit': 'Produit',
+
+        'Produit': 'Produit',
+            'livraisonItemQuantite': 'Quantite',
+
+        'Quantite': 'Quantite',
+            'livraisonItemLivraison': 'Livraison',
+
+        'Livraison': 'Livraison',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'achatItemHeader': 'Liste des achat items',
+    'searchInput': 'Chercher...',
+    'achatItemTabPan': 'Achat item',
+
+
+        'Id': 'Id',
+            'achatItemProduit': 'Produit',
+
+        'Produit': 'Produit',
+            'achatItemPrixUnitaire': 'Prix unitaire',
+
+        'Prix unitaire': 'Prix unitaire',
+            'achatItemPrixVente': 'Prix vente',
+
+        'Prix vente': 'Prix vente',
+            'achatItemQuantite': 'Quantite',
+
+        'Quantite': 'Quantite',
+            'achatItemQuantiteAvoir': 'Quantite avoir',
+
+        'Quantite avoir': 'Quantite avoir',
+            'achatItemRemise': 'Remise',
+
+        'Remise': 'Remise',
+            'achatItemAchat': 'Achat',
+
+        'Achat': 'Achat',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'modePaiementHeader': 'Liste des mode paiements',
+    'searchInput': 'Chercher...',
+    'modePaiementTabPan': 'Mode paiement',
+
+
+        'Id': 'Id',
+            'modePaiementLibelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'modePaiementCode': 'Code',
+
+        'Code': 'Code',
+            'modePaiementStyle': 'Style',
+
+        'Style': 'Style',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'banqueHeader': 'Liste des banques',
+    'searchInput': 'Chercher...',
+    'banqueTabPan': 'Banque',
+
+
+        'Id': 'Id',
+            'banqueLibelle': 'Libelle',
+
+        'Libelle': 'Libelle',
+            'banqueCode': 'Code',
+
+        'Code': 'Code',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'clientHeader': 'Liste des clients',
+    'searchInput': 'Chercher...',
+    'clientTabPan': 'Client',
+
+
+        'Id': 'Id',
+            'clientCin': 'Cin',
+
+        'Cin': 'Cin',
+            'clientNom': 'Nom',
+
+        'Nom': 'Nom',
+            'clientTel': 'Tel',
+
+        'Tel': 'Tel',
+            'clientEmail': 'Email',
+
+        'Email': 'Email',
+            'clientAdresse': 'Adresse',
+
+        'Adresse': 'Adresse',
+            'clientDescription': 'Description',
+
+        'Description': 'Description',
+            'clientCreance': 'Creance',
+
+        'Creance': 'Creance',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'achatHeader': 'Liste des achats',
+    'searchInput': 'Chercher...',
+    'achatTabPan': 'Achat',
+
+
+        'Id': 'Id',
+            'achatReference': 'Reference',
+
+        'Reference': 'Reference',
+            'achatDateAchat': 'Date achat',
+
+        'Date achat': 'Date achat',
+            'achatTotal': 'Total',
+
+        'Total': 'Total',
+            'achatTotalPaye': 'Total paye',
+
+        'Total paye': 'Total paye',
+            'achatDescription': 'Description',
+
+        'Description': 'Description',
+            'achatFournisseur': 'Fournisseur',
+
+        'Fournisseur': 'Fournisseur',
+            'achatPaiementAchats': 'Paiement achats',
+
+        'Paiement achats': 'Paiement achats',
+            'achatAchatItems': 'Achat items',
+
+        'Achat items': 'Achat items',
+            'achatAvoirAchats': 'Avoir achats',
+
+        'Avoir achats': 'Avoir achats',
+            'achatStore': 'Store',
+
+        'Store': 'Store',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'commandeHeader': 'Liste des commandes',
+    'searchInput': 'Chercher...',
+    'commandeTabPan': 'Commande',
+
+
+        'Id': 'Id',
+            'commandeReference': 'Reference',
+
+        'Reference': 'Reference',
+            'commandeDateCommande': 'Date commande',
+
+        'Date commande': 'Date commande',
+            'commandeTotal': 'Total',
+
+        'Total': 'Total',
+            'commandeClient': 'Client',
+
+        'Client': 'Client',
+            'commandeTotalePaye': 'Totale paye',
+
+        'Totale paye': 'Totale paye',
+            'commandeReceptions': 'Receptions',
+
+        'Receptions': 'Receptions',
+            'commandeCommandeItems': 'Commande items',
+
+        'Commande items': 'Commande items',
+            'commandeStore': 'Store',
+
+        'Store': 'Store',
+            'commandeEtatCommande': 'Etat commande',
+
+        'Etat commande': 'Etat commande',
+    'Les éléments de {first} à {last} sur {totalRecords} ': 'Les éléments de {first} à {last} sur {totalRecords} ',
+    'paiementLivraisonHeader': 'Liste des paiement livraisons',
+    'searchInput': 'Chercher...',
+    'paiementLivraisonTabPan': 'Paiement livraison',
+
+
+        'Id': 'Id',
+            'paiementLivraisonReference': 'Reference',
+
+        'Reference': 'Reference',
+            'paiementLivraisonDateLivraison': 'Date livraison',
+
+        'Date livraison': 'Date livraison',
+            'paiementLivraisonMontant': 'Montant',
+
+        'Montant': 'Montant',
+            'paiementLivraisonLivraison': 'Livraison',
+
+        'Livraison': 'Livraison',
+            'paiementLivraisonVente': 'Vente',
+
+        'Vente': 'Vente',
+            'paiementLivraisonModePaiement': 'Mode paiement',
+
+        'Mode paiement': 'Mode paiement',
+            'paiementLivraisonDescription': 'Description',
+
+        'Description': 'Description',
+}
+
+

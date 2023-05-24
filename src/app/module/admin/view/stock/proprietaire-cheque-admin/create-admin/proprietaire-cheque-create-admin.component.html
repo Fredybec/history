@@ -1,0 +1,46 @@
+        <p-dialog [(visible)]="createDialog" [style]="{width: '70vw'}" header="{{'proprietaireChequeTabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                        <p-tabView>
+                            <p-tabPanel header="{{'proprietaireChequeTabPan' | translate}}">
+                                <div class="grid">
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="1">{{'proprietaireChequeNom' | translate}}<span style="color: red;">*</span></label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'proprietaireChequeNom' | translate}}" id="1" [(ngModel)]="item.nom"
+                                                            [ngClass]="{'ng-invalid ng-dirty' : !validProprietaireChequeNom}"  />
+                                                    <small class='p-error' *ngIf='!validProprietaireChequeNom'>Nom est obligatoire.</small>
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="2">{{'proprietaireChequeCode' | translate}}<span style="color: red;">*</span></label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'proprietaireChequeCode' | translate}}" id="2" [(ngModel)]="item.code"
+                                                            [ngClass]="{'ng-invalid ng-dirty' : !validProprietaireChequeCode}"  />
+                                                    <small class='p-error' *ngIf='!validProprietaireChequeCode'>Code est obligatoire.</small>
+                                                </div>
+
+
+
+                                </div>
+                            </p-tabPanel>
+
+                        </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="grid-step">
+                        <div style="margin-left: auto;">
+                            <button pButton pRipple label="Valider"  *ngIf="validate" icon="pi pi-check" style="margin:10px" (click)="save()"></button>
+                        </div>
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+                        </div>
+
+                </div>
+            </ng-template>
+
+
+
+    </p-dialog>

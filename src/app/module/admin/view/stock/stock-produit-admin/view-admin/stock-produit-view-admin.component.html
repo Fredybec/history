@@ -1,0 +1,40 @@
+
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70vw'}" header="{{'stockProduitTabPan' | translate}}" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Information">
+                <div class="grid">
+                    <div class="field col-12 md:col-6">
+                        <label for="1">{{'Magasin' | translate}}</label>
+                        <p-dropdown [options]="magasins" [(ngModel)]="item.magasin" id="1" [disabled]="true" optionLabel="id" placeholder="{{'Magasin' | translate}}"></p-dropdown>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="2">{{'Produit' | translate}}</label>
+                        <p-dropdown [options]="produits" [(ngModel)]="item.produit" id="2" [disabled]="true" optionLabel="libelle" placeholder="{{'Produit' | translate}}"></p-dropdown>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="3">{{'Quantite' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="3" [disabled]="true" placeholder="{{'Quantite' | translate}}" [(ngModel)]="item.quantite"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="4">{{'Quantite deffecteuse' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="4" [disabled]="true" placeholder="{{'Quantite deffecteuse' | translate}}" [(ngModel)]="item.quantiteDeffecteuse"></p-inputNumber>
+                    </div>
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="grid-footer">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+

@@ -1,0 +1,83 @@
+        <p-dialog [(visible)]="createDialog" [style]="{width: '70vw'}" header="{{'paiementCommandeTabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                        <p-tabView>
+                            <p-tabPanel header="{{'paiementCommandeTabPan' | translate}}">
+                                <div class="grid">
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="1">{{'paiementCommandeReference' | translate}}<span style="color: red;">*</span></label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'paiementCommandeReference' | translate}}" id="1" [(ngModel)]="item.reference"
+                                                            [ngClass]="{'ng-invalid ng-dirty' : !validPaiementCommandeReference}"  />
+                                                    <small class='p-error' *ngIf='!validPaiementCommandeReference'>Reference est obligatoire.</small>
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="2">{{'paiementCommandeDatePaiement' | translate}}</label>
+                                                    <p-calendar appendTo="body" id="2"  [showTime]="true" [showSeconds]="false" placeholder="{{'paiementCommandeDatePaiement' | translate}}"  [(ngModel)]="item.datePaiement"
+                                                            dateFormat="{{dateFormat}}"  >
+                                                    </p-calendar>
+                                                    
+                                                </div>
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="3">{{'paiementCommandeMontant' | translate}}</label>
+                                                    <p-inputNumber class="mb-2 mr-2" id="3" placeholder="{{'paiementCommandeMontant' | translate}}" [(ngModel)]="item.montant"  >
+                                                    </p-inputNumber>
+                                                    
+                                                </div>
+
+                                            <div class="field col-11 md:col-5">
+                                                <label for="4">{{'paiementCommandeCommande' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="commandes" [(ngModel)]="item.commande" id="4" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="reference" placeholder="{{'paiementCommandeCommande' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+                                                <div class="col-1">
+                                                    <label></label>
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateCommande('Commande')" class="p-button-success one-colonne-btn-success-align"></button>
+                                                </div>
+                                            <div class="field col-11 md:col-5">
+                                                <label for="5">{{'paiementCommandeModePaiement' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="modePaiements" [(ngModel)]="item.modePaiement" id="5" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="libelle" placeholder="{{'paiementCommandeModePaiement' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+                                                <div class="col-1">
+                                                    <label></label>
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateModePaiement('ModePaiement')" class="p-button-success one-colonne-btn-success-align"></button>
+                                                </div>
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="6">{{'paiementCommandeDescription' | translate}}</label>
+                                                    <textarea id="6" pInputTextarea rows="5" cols="30" placeholder="{{'paiementCommandeDescription' | translate}}"  [(ngModel)]="item.description"
+                                                             ></textarea>
+                                                    
+                                                </div>
+
+                                </div>
+                            </p-tabPanel>
+
+                        </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="grid-step">
+                        <div style="margin-left: auto;">
+                            <button pButton pRipple label="Valider"  *ngIf="validate" icon="pi pi-check" style="margin:10px" (click)="save()"></button>
+                        </div>
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+                        </div>
+
+                </div>
+            </ng-template>
+
+            <app-commande-create-admin></app-commande-create-admin>
+            <app-mode-paiement-create-admin></app-mode-paiement-create-admin>
+
+
+    </p-dialog>

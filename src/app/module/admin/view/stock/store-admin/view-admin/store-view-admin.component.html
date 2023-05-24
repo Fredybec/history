@@ -1,0 +1,58 @@
+
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70vw'}" header="{{'storeTabPan' | translate}}" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Information">
+                <div class="grid">
+                    <div class="field col-12 md:col-6">
+                        <label for="1">{{'Libelle' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Libelle' | translate}}" autofocus  id="1" [(ngModel)]="item.libelle">
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="2">{{'Reference' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Reference' | translate}}" autofocus  id="2" [(ngModel)]="item.reference">
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="3">{{'Abonne' | translate}}</label>
+                        <p-dropdown [options]="abonnes" [(ngModel)]="item.abonne" id="3" [disabled]="true" optionLabel="code" placeholder="{{'Abonne' | translate}}"></p-dropdown>
+                    </div>
+                </div>
+            </p-tabPanel>
+
+            <p-tabPanel header="{{'Magasins' | translate}}">
+                <div class="grid">
+                    <div class="col">
+                        <div class="card">
+                            <p-table [value]="item.magasins" [scrollable]="true" scrollHeight="200px">
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>Nom</th>
+                                        <th>Adresse</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-p>
+                                    <tr>
+                                        <td>{{p.nom}}</td>
+                                        <td>{{p.adresse}}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </div>
+                </div>
+            </p-tabPanel>
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="grid-footer">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+

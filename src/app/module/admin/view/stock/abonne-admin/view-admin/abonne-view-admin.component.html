@@ -1,0 +1,114 @@
+
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70vw'}" header="{{'abonneTabPan' | translate}}" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Information">
+                <div class="grid">
+                    <div class="field col-12 md:col-3">
+                        <label for="1">{{'Code' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Code' | translate}}" autofocus  id="1" [(ngModel)]="item.code">
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="2">{{'Adresse' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Adresse' | translate}}" autofocus  id="2" [(ngModel)]="item.adresse">
+                    </div>
+                    <div class="field align-inputswitch col-12  md:col-3">
+                        <div  class="label-inputswitch">
+                            <label for="3">{{'Bloqued' | translate}}</label>
+                        </div>
+                        <div class="input-switch">
+                            <p-inputSwitch id="3"  [disabled]="true" [(ngModel)]="item.bloqued"></p-inputSwitch>
+                        </div>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="4">{{'Date creation' | translate}}</label>
+                        <p-calendar id="4" [disabled]="true"  [showTime]="true" [showSeconds]="false" placeholder="{{'Date creation' | translate}}"  [(ngModel)]="item.dateCreation" dateFormat="{{dateFormat}}"></p-calendar>
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="5">{{'Email' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Email' | translate}}" autofocus  id="5" [(ngModel)]="item.email">
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="6">{{'Tel' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Tel' | translate}}" autofocus  id="6" [(ngModel)]="item.tel">
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="7">{{'Logo' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Logo' | translate}}" autofocus  id="7" [(ngModel)]="item.logo">
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="8">{{'Nom' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Nom' | translate}}" autofocus  id="8" [(ngModel)]="item.nom">
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="9">{{'Prenom' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Prenom' | translate}}" autofocus  id="9" [(ngModel)]="item.prenom">
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="10">{{'Nom societe' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Nom societe' | translate}}" autofocus  id="10" [(ngModel)]="item.nomSociete">
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="11">{{'Path back up' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Path back up' | translate}}" autofocus  id="11" [(ngModel)]="item.pathBackUp">
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="12">{{'Patente' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Patente' | translate}}" autofocus  id="12" [(ngModel)]="item.patente">
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="13">{{'Rc' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Rc' | translate}}" autofocus  id="13" [(ngModel)]="item.rc">
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="14">{{'Cnss' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Cnss' | translate}}" autofocus  id="14" [(ngModel)]="item.cnss">
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="15">{{'Ifisc' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Ifisc' | translate}}" autofocus  id="15" [(ngModel)]="item.ifisc">
+                    </div>
+                    <div class="field col-12 md:col-3">
+                        <label for="16">{{'Ice' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Ice' | translate}}" autofocus  id="16" [(ngModel)]="item.ice">
+                    </div>
+                </div>
+            </p-tabPanel>
+
+            <p-tabPanel header="{{'Stores' | translate}}">
+                <div class="grid">
+                    <div class="col">
+                        <div class="card">
+                            <p-table [value]="item.stores" [scrollable]="true" scrollHeight="200px">
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>Libelle</th>
+                                        <th>Reference</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-p>
+                                    <tr>
+                                        <td>{{p.libelle}}</td>
+                                        <td>{{p.reference}}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </div>
+                </div>
+            </p-tabPanel>
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="grid-footer">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+

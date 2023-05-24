@@ -1,0 +1,224 @@
+        <p-dialog [(visible)]="createDialog" [style]="{width: '70vw'}" header="{{'abonneTabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                        <p-tabView>
+                            <p-tabPanel header="{{'abonneTabPan' | translate}}">
+                                <div class="grid">
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="1">{{'abonneCode' | translate}}<span style="color: red;">*</span></label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonneCode' | translate}}" id="1" [(ngModel)]="item.code"
+                                                            [ngClass]="{'ng-invalid ng-dirty' : !validAbonneCode}"  />
+                                                    <small class='p-error' *ngIf='!validAbonneCode'>Code est obligatoire.</small>
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="2">{{'abonneAdresse' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonneAdresse' | translate}}" id="2" [(ngModel)]="item.adresse"
+                                                             />
+                                                    
+                                                </div>
+
+
+
+                                                <div class="field align-inputswitch col-12  md:col-3">
+                                                    <div  class="label-inputswitch">
+                                                        <label for="3">{{'abonneBloqued' | translate}}</label>
+                                                    </div>
+                                                    <div class="input-switch">
+                                                        <p-inputSwitch id="3"  [(ngModel)]="item.bloqued"
+                                                                 >
+                                                        </p-inputSwitch>
+                                                        
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="4">{{'abonneDateCreation' | translate}}</label>
+                                                    <p-calendar appendTo="body" id="4"  [showTime]="true" [showSeconds]="false" placeholder="{{'abonneDateCreation' | translate}}"  [(ngModel)]="item.dateCreation"
+                                                            dateFormat="{{dateFormat}}"  >
+                                                    </p-calendar>
+                                                    
+                                                </div>
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="5">{{'abonneEmail' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonneEmail' | translate}}" id="5" [(ngModel)]="item.email"
+                                                             />
+                                                    
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="6">{{'abonneTel' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonneTel' | translate}}" id="6" [(ngModel)]="item.tel"
+                                                             />
+                                                    
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="7">{{'abonneLogo' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonneLogo' | translate}}" id="7" [(ngModel)]="item.logo"
+                                                             />
+                                                    
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="8">{{'abonneNom' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonneNom' | translate}}" id="8" [(ngModel)]="item.nom"
+                                                             />
+                                                    
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="9">{{'abonnePrenom' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonnePrenom' | translate}}" id="9" [(ngModel)]="item.prenom"
+                                                             />
+                                                    
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="10">{{'abonneNomSociete' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonneNomSociete' | translate}}" id="10" [(ngModel)]="item.nomSociete"
+                                                             />
+                                                    
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="11">{{'abonnePathBackUp' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonnePathBackUp' | translate}}" id="11" [(ngModel)]="item.pathBackUp"
+                                                             />
+                                                    
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="12">{{'abonnePatente' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonnePatente' | translate}}" id="12" [(ngModel)]="item.patente"
+                                                             />
+                                                    
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="13">{{'abonneRc' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonneRc' | translate}}" id="13" [(ngModel)]="item.rc"
+                                                             />
+                                                    
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="14">{{'abonneCnss' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonneCnss' | translate}}" id="14" [(ngModel)]="item.cnss"
+                                                             />
+                                                    
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="15">{{'abonneIfisc' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonneIfisc' | translate}}" id="15" [(ngModel)]="item.ifisc"
+                                                             />
+                                                    
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-3">
+                                                    <label for="16">{{'abonneIce' | translate}}</label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'abonneIce' | translate}}" id="16" [(ngModel)]="item.ice"
+                                                             />
+                                                    
+                                                </div>
+
+
+
+                                </div>
+                            </p-tabPanel>
+                                    <p-tabPanel header="{{'Stores' | translate}}">
+                                        <p-tabView [(activeIndex)]="activeTab">
+                                            <p-tabPanel header="Création">
+                                                    <div class="grid">
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="1">Libelle<span style="color: red;">*</span></label>
+                                                                        <input class="mb-2 mr-2" type="text" pInputText placeholder="Libelle"
+                                                                               id="1" [(ngModel)]="storesElement.libelle" autofocus  [ngClass]="{'ng-invalid ng-dirty' : !validStoresLibelle}"  >
+                                                                        <small class='p-error' *ngIf='!validStoresLibelle'>Libelle est obligatoire.</small>
+                                                                    </div>
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="2">Reference<span style="color: red;">*</span></label>
+                                                                        <input class="mb-2 mr-2" type="text" pInputText placeholder="Reference"
+                                                                               id="2" [(ngModel)]="storesElement.reference" autofocus  [ngClass]="{'ng-invalid ng-dirty' : !validStoresReference}"  >
+                                                                        <small class='p-error' *ngIf='!validStoresReference'>Reference est obligatoire.</small>
+                                                                    </div>
+                                                        <div class="field col-12 md:col-1">
+                                                            <button pButton pRipple type="button" icon="pi pi-plus" class="mt-4" label="OK" (click)="addStores()"></button>
+                                                        </div>
+
+                                                    </div>
+                                            </p-tabPanel>
+                                            <p-tabPanel header="Liste {{item.stores?.length > 0 ? '(' + item.stores?.length + ')' : ''}}">
+                                                    <div class="card">
+                                                        <p-table [value]="item.stores" [scrollable]="true" scrollHeight="200px">
+                                                            <ng-template pTemplate="header">
+                                                                <tr>
+                                                                                <th>Libelle</th>
+                                                                                <th>Reference</th>
+                                                                    <th>Actions</th>
+                                                                </tr>
+                                                            </ng-template>
+                                                            <ng-template pTemplate="body" let-p>
+                                                                <tr>
+                                                                                <td>{{p.libelle}}</td>
+                                                                                <td>{{p.reference}}</td>
+                                                                    <td>
+                                                                        <button (click)="deleteStore(p)" pButton type="button" icon="pi pi-times"  class="p-button-rounded p-button-danger"></button>
+                                                                        <button (click)="editStore(p)" pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </ng-template>
+                                                        </p-table>
+                                                    </div>
+
+                                            </p-tabPanel>
+                                        </p-tabView>
+                                    </p-tabPanel>
+
+
+                        </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="grid-step">
+                        <div style="margin-left: auto;">
+                            <button pButton pRipple label="Valider"  *ngIf="validate" icon="pi pi-check" style="margin:10px" (click)="save()"></button>
+                        </div>
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+                        </div>
+
+                </div>
+            </ng-template>
+
+
+
+    </p-dialog>

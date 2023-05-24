@@ -1,0 +1,118 @@
+        <p-dialog [(visible)]="createDialog" [style]="{width: '70vw'}" header="{{'avoirAchatTabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                        <p-tabView>
+                            <p-tabPanel header="{{'avoirAchatTabPan' | translate}}">
+                                <div class="grid">
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="1">{{'avoirAchatDateAvoir' | translate}}</label>
+                                                    <p-calendar appendTo="body" id="1"  [showTime]="true" [showSeconds]="false" placeholder="{{'avoirAchatDateAvoir' | translate}}"  [(ngModel)]="item.dateAvoir"
+                                                            dateFormat="{{dateFormat}}"  >
+                                                    </p-calendar>
+                                                    
+                                                </div>
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="2">{{'avoirAchatMontant' | translate}}</label>
+                                                    <p-inputNumber class="mb-2 mr-2" id="2" placeholder="{{'avoirAchatMontant' | translate}}" [(ngModel)]="item.montant"  >
+                                                    </p-inputNumber>
+                                                    
+                                                </div>
+
+                                            <div class="field col-11 md:col-5">
+                                                <label for="3">{{'avoirAchatAchat' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="achats" [(ngModel)]="item.achat" id="3" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="reference" placeholder="{{'avoirAchatAchat' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+                                                <div class="col-1">
+                                                    <label></label>
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateAchat('Achat')" class="p-button-success one-colonne-btn-success-align"></button>
+                                                </div>
+                                </div>
+                            </p-tabPanel>
+                                    <p-tabPanel header="{{'Avoir achat items' | translate}}">
+                                        <p-tabView [(activeIndex)]="activeTab">
+                                            <p-tabPanel header="Création">
+                                                    <div class="grid">
+                                                                    <div class="field col-11 md:col-3">
+                                                                        <label>Produit</label>
+                                                                        <p-dropdown  appendTo="body"  [options]="produits" [(ngModel)]="avoirAchatItemsElement.produit"
+                                                                                     id="1"  [filter]="true" filterMatchMode="contains" [showClear]="true" optionLabel="libelle"
+                                                                                     placeholder="Produit"  >
+                                                                        </p-dropdown>
+                                                                        
+                                                                    </div>
+                                                                    <div class="col-1">
+                                                                        <label></label>
+                                                                        <button pButton pRipple type="button" icon="pi pi-plus"   (click)="openCreateProduit('produit')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                                                    </div>
+
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="2">Montant</label>
+                                                                        <p-inputNumber class="mb-2 mr-2" id="montant" placeholder="Montant"  [(ngModel)]="avoirAchatItemsElement.montant"></p-inputNumber>
+                                                                        
+                                                                    </div>
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="3">Quantite</label>
+                                                                        <p-inputNumber class="mb-2 mr-2" id="quantite" placeholder="Quantite"  [(ngModel)]="avoirAchatItemsElement.quantite"></p-inputNumber>
+                                                                        
+                                                                    </div>
+                                                        <div class="field col-12 md:col-1">
+                                                            <button pButton pRipple type="button" icon="pi pi-plus" class="mt-4" label="OK" (click)="addAvoirAchatItems()"></button>
+                                                        </div>
+
+                                                    </div>
+                                            </p-tabPanel>
+                                            <p-tabPanel header="Liste {{item.avoirAchatItems?.length > 0 ? '(' + item.avoirAchatItems?.length + ')' : ''}}">
+                                                    <div class="card">
+                                                        <p-table [value]="item.avoirAchatItems" [scrollable]="true" scrollHeight="200px">
+                                                            <ng-template pTemplate="header">
+                                                                <tr>
+                                                                                <th>Produit</th>
+                                                                                <th>Montant</th>
+                                                                                <th>Quantite</th>
+                                                                    <th>Actions</th>
+                                                                </tr>
+                                                            </ng-template>
+                                                            <ng-template pTemplate="body" let-p>
+                                                                <tr>
+                                                                            <td>{{p.produit?.libelle}}</td>
+                                                                                <td>{{p.montant}}</td>
+                                                                                <td>{{p.quantite}}</td>
+                                                                    <td>
+                                                                        <button (click)="deleteAvoirAchatItem(p)" pButton type="button" icon="pi pi-times"  class="p-button-rounded p-button-danger"></button>
+                                                                        <button (click)="editAvoirAchatItem(p)" pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </ng-template>
+                                                        </p-table>
+                                                    </div>
+
+                                            </p-tabPanel>
+                                        </p-tabView>
+                                    </p-tabPanel>
+
+
+                        </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="grid-step">
+                        <div style="margin-left: auto;">
+                            <button pButton pRipple label="Valider"  *ngIf="validate" icon="pi pi-check" style="margin:10px" (click)="save()"></button>
+                        </div>
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+                        </div>
+
+                </div>
+            </ng-template>
+
+            <app-achat-create-admin></app-achat-create-admin>
+
+            <app-produit-create-admin></app-produit-create-admin>
+
+    </p-dialog>

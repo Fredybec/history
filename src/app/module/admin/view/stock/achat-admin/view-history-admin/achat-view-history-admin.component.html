@@ -1,0 +1,47 @@
+
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70vw'}" header="{{'achatTabPan' | translate}}" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Information">
+                <div class="grid">
+                    <div class="field col-12 md:col-4">
+                        <label for="1">{{'Reference' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Reference' | translate}}" autofocus  id="1" [(ngModel)]="item.reference">
+                    </div>
+                    <div class="field col-12 md:col-4">
+                        <label for="2">{{'date' | translate}}</label>
+                        <p-calendar id="2" [disabled]="true"  [showTime]="true" [showSeconds]="false" placeholder="{{'Date' | translate}}"  [(ngModel)]="item.date" dateFormat="{{dateFormat}}"></p-calendar>
+                    </div>
+                    <div class="field col-12 md:col-4">
+                        <label for="5">{{'Data' | translate}}</label>
+                        <textarea id="5" pInputTextarea rows="5" cols="30" [disabled]="true" placeholder="{{'Data' | translate}}"  [(ngModel)]="item.data"></textarea>
+                    </div>
+                    <div class="field col-12 md:col-4">
+                        <label for="6">{{'Action Type' | translate}}</label>
+                        <textarea id="5" pInputTextarea rows="5" cols="30" [disabled]="true" placeholder="{{'Action Type' | translate}}"  [(ngModel)]="item.actionType"></textarea>
+                    </div>
+                    <div class="field col-12 md:col-4">
+                        <label for="6">{{'Object Name' | translate}}</label>
+                        <textarea id="5" pInputTextarea rows="5" cols="30" [disabled]="true" placeholder="{{'Object Name' | translate}}"  [(ngModel)]="item.objectName"></textarea>
+                    </div>
+                    <div class="field col-12 md:col-4">
+                        <label for="6">{{'userName' | translate}}</label>
+                        <textarea id="5" pInputTextarea rows="5" cols="30" [disabled]="true" placeholder="{{'userName' | translate}}"  [(ngModel)]="item.username"></textarea>
+                    </div>
+                </div>
+            </p-tabPanel>
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="grid-footer">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+

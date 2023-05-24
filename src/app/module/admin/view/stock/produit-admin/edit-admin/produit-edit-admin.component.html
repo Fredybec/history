@@ -1,0 +1,198 @@
+        <p-dialog [(visible)]="editDialog" [style]="{width: '70vw'}" header="{{'produitTabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                <p-tabView>
+                    <p-tabPanel header="{{'produitTabPan' | translate}}">
+                        <div class="grid">
+
+
+                                        <div class="field col-12 md:col-3">
+                                            <label for="1">{{'produitReference' | translate}}<span style="color: red;">*</span></label>
+                                            <input   appendTo="body" class="mb-2 mr-2" type="text" pInputText placeholder="{{'produitReference' | translate}}" id="1" [(ngModel)]="item.reference"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validProduitReference}"  />
+                                            <small class='p-error' *ngIf='!validProduitReference'>Reference est obligatoire.</small>
+                                        </div>
+
+                                        <div class="field col-12 md:col-3">
+                                            <label for="2">{{'produitLibelle' | translate}}<span style="color: red;">*</span></label>
+                                            <input   appendTo="body" class="mb-2 mr-2" type="text" pInputText placeholder="{{'produitLibelle' | translate}}" id="2" [(ngModel)]="item.libelle"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validProduitLibelle}"  />
+                                            <small class='p-error' *ngIf='!validProduitLibelle'>Libelle est obligatoire.</small>
+                                        </div>
+
+                                    <div class="field col-11 md:col-2">
+                                            <label for="3">{{'produitCategorieProduit' | translate}}</label>
+                                            <p-dropdown   appendTo="body" [options]="categorieProduits" [(ngModel)]="item.categorieProduit" id="3"[filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true" optionLabel="libelle" placeholder="{{'produitCategorieProduit' | translate}}"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button" icon="pi pi-plus"  (click)="openCreateCategorieProduit('CategorieProduit')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+
+                                        <div class="field col-12 md:col-3">
+                                            <label for="4">{{'produitBarcode' | translate}}</label>
+                                            <input   appendTo="body" class="mb-2 mr-2" type="text" pInputText placeholder="{{'produitBarcode' | translate}}" id="4" [(ngModel)]="item.barcode"
+                                                     />
+                                            
+                                        </div>
+
+                                        <div class="field col-12 md:col-3">
+                                            <label for="5">{{'produitDescription' | translate}}</label>
+                                            <input   appendTo="body" class="mb-2 mr-2" type="text" pInputText placeholder="{{'produitDescription' | translate}}" id="5" [(ngModel)]="item.description"
+                                                     />
+                                            
+                                        </div>
+
+                                        <div class="field col-12 md:col-3">
+                                            <label for="6">{{'produitPrixAchatMoyen' | translate}}</label>
+                                            <p-inputNumber  appendTo="body" class="mb-2 mr-2" id="6"
+                                                           placeholder="{{'produitPrixAchatMoyen' | translate}}" [(ngModel)]="item.prixAchatMoyen"  >
+                                            </p-inputNumber>
+                                            
+                                        </div>
+
+                                        <div class="field col-12 md:col-3">
+                                            <label for="7">{{'produitQuantite' | translate}}</label>
+                                            <p-inputNumber  appendTo="body" class="mb-2 mr-2" id="7"
+                                                           placeholder="{{'produitQuantite' | translate}}" [(ngModel)]="item.quantite"  >
+                                            </p-inputNumber>
+                                            
+                                        </div>
+
+                                        <div class="field col-12 md:col-3">
+                                            <label for="8">{{'produitSeuilAlert' | translate}}</label>
+                                            <p-inputNumber  appendTo="body" class="mb-2 mr-2" id="8"
+                                                           placeholder="{{'produitSeuilAlert' | translate}}" [(ngModel)]="item.seuilAlert"  >
+                                            </p-inputNumber>
+                                            
+                                        </div>
+
+                                    <div class="field col-11 md:col-2">
+                                            <label for="9">{{'produitUniteMesure' | translate}}</label>
+                                            <p-dropdown   appendTo="body" [options]="uniteMesures" [(ngModel)]="item.uniteMesure" id="9"[filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true" optionLabel="libelle" placeholder="{{'produitUniteMesure' | translate}}"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button" icon="pi pi-plus"  (click)="openCreateUniteMesure('UniteMesure')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+
+                                    <div class="field col-11 md:col-2">
+                                            <label for="10">{{'produitMarque' | translate}}</label>
+                                            <p-dropdown   appendTo="body" [options]="marques" [(ngModel)]="item.marque" id="10"[filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true" optionLabel="libelle" placeholder="{{'produitMarque' | translate}}"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button" icon="pi pi-plus"  (click)="openCreateMarque('Marque')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+
+                                    <div class="field col-11 md:col-2">
+                                            <label for="11">{{'produitStore' | translate}}</label>
+                                            <p-dropdown   appendTo="body" [options]="stores" [(ngModel)]="item.store" id="11"[filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true" optionLabel="libelle" placeholder="{{'produitStore' | translate}}"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button" icon="pi pi-plus"  (click)="openCreateStore('Store')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+
+                                        <div class="field col-12 md:col-3">
+                                            <label for="12">{{'produitPhotoProduits' | translate}}</label>
+                                            <input   appendTo="body" class="mb-2 mr-2" type="text" pInputText placeholder="{{'produitPhotoProduits' | translate}}" id="12" [(ngModel)]="item.photoProduits"
+                                                     />
+                                            
+                                        </div>
+
+                        </div>
+                    </p-tabPanel>
+
+                            <p-tabPanel header="{{'Stock produits' | translate}}">
+                                <p-tabView [(activeIndex)]="activeTab">
+                                    <p-tabPanel header="Création">
+                                        <div class="grid">
+                                                            <div class="field col-11 md:col-3">
+                                                                <label>Magasin</label>
+                                                                <p-dropdown appendTo="body" [options]="magasins" [(ngModel)]="stockProduitsElement.magasin"
+                                                                        id="1"  [filter]="true" filterMatchMode="contains" [showClear]="true"
+                                                                        optionLabel="id" placeholder="Magasin"  >
+                                                                </p-dropdown>
+                                                                
+                                                            </div>
+                                                            <div class="col-1">
+                                                                <label></label>
+                                                                <button pButton pRipple type="button" icon="pi pi-plus"   (click)="openCreateMagasin('Magasin')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                                            </div>
+
+                                                            <div class="field col-12 md:col-4">
+                                                                <label for="3">Quantite</label>
+                                                                <p-inputNumber  appendTo="body" class="mb-2 mr-2" id="quantite" [(ngModel)]="stockProduitsElement.quantite" placeholder="Quantite"  ></p-inputNumber>
+                                                                
+                                                            </div>
+                                                            <div class="field col-12 md:col-4">
+                                                                <label for="4">Quantite deffecteuse</label>
+                                                                <p-inputNumber  appendTo="body" class="mb-2 mr-2" id="quantiteDeffecteuse" [(ngModel)]="stockProduitsElement.quantiteDeffecteuse" placeholder="Quantite deffecteuse"  ></p-inputNumber>
+                                                                
+                                                            </div>
+                                                <div class="field col-12 md:col-1">
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" class="mt-4" label="OK" (click)="addStockProduits()"></button>
+                                                </div>
+                                        </div>
+                                    </p-tabPanel>
+                                    <p-tabPanel header="Liste {{item.stockProduits?.length > 0 ? '(' + item.stockProduits?.length + ')' : ''}}">
+                                            <div class="card">
+                                                <p-table [value]="item.stockProduits" [scrollable]="true" scrollHeight="200px">
+                                                    <ng-template pTemplate="header">
+                                                        <tr>
+                                                                        <th>Magasin</th>
+                                                                        <th>Quantite</th>
+                                                                        <th>Quantite deffecteuse</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </ng-template>
+                                                    <ng-template pTemplate="body" let-p>
+                                                        <tr>
+                                                                    <td>{{p.magasin?.id}}</td>
+                                                                        <td>{{p.quantite}}</td>
+                                                                        <td>{{p.quantiteDeffecteuse}}</td>
+                                                            <td>
+                                                                <button (click)="deleteStockProduit(p)" pButton type="button" icon="pi pi-times"  class="p-button-rounded p-button-danger"></button>
+                                                                <button (click)="editStockProduit(p)" pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
+                                                            </td>
+                                                        </tr>
+                                                    </ng-template>
+                                                </p-table>
+                                            </div>
+                                    </p-tabPanel>
+                                </p-tabView>
+                            </p-tabPanel>
+                </p-tabView>
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="grid-footer">
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+                        </div>
+                    <div>
+                        <button pButton pRipple label="Valider" icon="pi pi-check" style="margin:10px" (click)="edit()"></button>
+                    </div>
+                </div>
+            </ng-template>
+
+                    <app-categorie-produit-create-admin></app-categorie-produit-create-admin>
+                    <app-unite-mesure-create-admin></app-unite-mesure-create-admin>
+                    <app-marque-create-admin></app-marque-create-admin>
+                    <app-store-create-admin></app-store-create-admin>
+
+                            <app-magasin-create-admin></app-magasin-create-admin>
+
+    </p-dialog>

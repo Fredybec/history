@@ -1,0 +1,52 @@
+        <p-dialog [(visible)]="editDialog" [style]="{width: '70vw'}" header="{{'proprietaireChequeBanqueTabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                <p-tabView>
+                    <p-tabPanel header="{{'proprietaireChequeBanqueTabPan' | translate}}">
+                        <div class="grid">
+
+
+                                    <div class="field col-11 md:col-5">
+                                            <label for="1">{{'proprietaireChequeBanqueProprietaireCheque' | translate}}</label>
+                                            <p-dropdown   appendTo="body" [options]="proprietaireCheques" [(ngModel)]="item.proprietaireCheque" id="1"[filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true" optionLabel="nom" placeholder="{{'proprietaireChequeBanqueProprietaireCheque' | translate}}"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button" icon="pi pi-plus"  (click)="openCreateProprietaireCheque('ProprietaireCheque')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+
+                                    <div class="field col-11 md:col-5">
+                                            <label for="2">{{'proprietaireChequeBanqueBanque' | translate}}</label>
+                                            <p-dropdown   appendTo="body" [options]="banques" [(ngModel)]="item.banque" id="2"[filter]="true" filterMatchMode="contains"
+                                                    [showClear]="true" optionLabel="libelle" placeholder="{{'proprietaireChequeBanqueBanque' | translate}}"  >
+                                            </p-dropdown>
+                                            
+                                        </div>
+                                        <div class="col-1">
+                                            <label></label>
+                                            <button pButton pRipple type="button" icon="pi pi-plus"  (click)="openCreateBanque('Banque')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                        </div>
+                        </div>
+                    </p-tabPanel>
+
+                </p-tabView>
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="grid-footer">
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+                        </div>
+                    <div>
+                        <button pButton pRipple label="Valider" icon="pi pi-check" style="margin:10px" (click)="edit()"></button>
+                    </div>
+                </div>
+            </ng-template>
+
+                    <app-proprietaire-cheque-create-admin></app-proprietaire-cheque-create-admin>
+                    <app-banque-create-admin></app-banque-create-admin>
+
+
+    </p-dialog>

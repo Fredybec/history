@@ -1,0 +1,231 @@
+        <p-dialog [(visible)]="createDialog" [style]="{width: '70vw'}" header="{{'demandeTabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                        <p-tabView>
+                            <p-tabPanel header="{{'demandeTabPan' | translate}}">
+                                <div class="grid">
+
+                                            <div class="field col-11 md:col-5">
+                                                <label for="1">{{'demandeProduit' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="produits" [(ngModel)]="item.produit" id="1" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="libelle" placeholder="{{'demandeProduit' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+                                                <div class="col-1">
+                                                    <label></label>
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateProduit('Produit')" class="p-button-success one-colonne-btn-success-align"></button>
+                                                </div>
+                                            <div class="field col-11 md:col-5">
+                                                <label for="2">{{'demandeClient' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="clients" [(ngModel)]="item.client" id="2" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="nom" placeholder="{{'demandeClient' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+                                                <div class="col-1">
+                                                    <label></label>
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateClient('Client')" class="p-button-success one-colonne-btn-success-align"></button>
+                                                </div>
+                                            <div class="field col-11 md:col-5">
+                                                <label for="3">{{'demandeLivraison' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="livraisons" [(ngModel)]="item.livraison" id="3" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="id" placeholder="{{'demandeLivraison' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+                                                <div class="col-1">
+                                                    <label></label>
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateLivraison('Livraison')" class="p-button-success one-colonne-btn-success-align"></button>
+                                                </div>
+                                            <div class="field col-11 md:col-5">
+                                                <label for="4">{{'demandeMagasin' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="magasins" [(ngModel)]="item.magasin" id="4" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="id" placeholder="{{'demandeMagasin' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+                                                <div class="col-1">
+                                                    <label></label>
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateMagasin('Magasin')" class="p-button-success one-colonne-btn-success-align"></button>
+                                                </div>
+                                            <div class="field col-11 md:col-5">
+                                                <label for="7">{{'demandeEtatDemande' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="etatDemandes" [(ngModel)]="item.etatDemande" id="7" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="libelle" placeholder="{{'demandeEtatDemande' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+                                                <div class="col-1">
+                                                    <label></label>
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateEtatDemande('EtatDemande')" class="p-button-success one-colonne-btn-success-align"></button>
+                                                </div>
+                                </div>
+                            </p-tabPanel>
+                                    <p-tabPanel header="{{'Demande items' | translate}}">
+                                        <p-tabView [(activeIndex)]="activeTab">
+                                            <p-tabPanel header="Création">
+                                                    <div class="grid">
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="1">Prix</label>
+                                                                        <p-inputNumber class="mb-2 mr-2" id="prix" placeholder="Prix"  [(ngModel)]="demandeItemsElement.prix"></p-inputNumber>
+                                                                        
+                                                                    </div>
+                                                                    <div class="field col-11 md:col-3">
+                                                                        <label>Produit</label>
+                                                                        <p-dropdown  appendTo="body"  [options]="produits" [(ngModel)]="demandeItemsElement.produit"
+                                                                                     id="2"  [filter]="true" filterMatchMode="contains" [showClear]="true" optionLabel="libelle"
+                                                                                     placeholder="Produit"  >
+                                                                        </p-dropdown>
+                                                                        
+                                                                    </div>
+                                                                    <div class="col-1">
+                                                                        <label></label>
+                                                                        <button pButton pRipple type="button" icon="pi pi-plus"   (click)="openCreateProduit('produit')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                                                    </div>
+
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="3">Quantite</label>
+                                                                        <p-inputNumber class="mb-2 mr-2" id="quantite" placeholder="Quantite"  [(ngModel)]="demandeItemsElement.quantite"></p-inputNumber>
+                                                                        
+                                                                    </div>
+                                                        <div class="field col-12 md:col-1">
+                                                            <button pButton pRipple type="button" icon="pi pi-plus" class="mt-4" label="OK" (click)="addDemandeItems()"></button>
+                                                        </div>
+
+                                                    </div>
+                                            </p-tabPanel>
+                                            <p-tabPanel header="Liste {{item.demandeItems?.length > 0 ? '(' + item.demandeItems?.length + ')' : ''}}">
+                                                    <div class="card">
+                                                        <p-table [value]="item.demandeItems" [scrollable]="true" scrollHeight="200px">
+                                                            <ng-template pTemplate="header">
+                                                                <tr>
+                                                                                <th>Prix</th>
+                                                                                <th>Produit</th>
+                                                                                <th>Quantite</th>
+                                                                    <th>Actions</th>
+                                                                </tr>
+                                                            </ng-template>
+                                                            <ng-template pTemplate="body" let-p>
+                                                                <tr>
+                                                                                <td>{{p.prix}}</td>
+                                                                            <td>{{p.produit?.libelle}}</td>
+                                                                                <td>{{p.quantite}}</td>
+                                                                    <td>
+                                                                        <button (click)="deleteDemandeItem(p)" pButton type="button" icon="pi pi-times"  class="p-button-rounded p-button-danger"></button>
+                                                                        <button (click)="editDemandeItem(p)" pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </ng-template>
+                                                        </p-table>
+                                                    </div>
+
+                                            </p-tabPanel>
+                                        </p-tabView>
+                                    </p-tabPanel>
+
+                                    <p-tabPanel header="{{'Paiement demandes' | translate}}">
+                                        <p-tabView [(activeIndex)]="activeTab">
+                                            <p-tabPanel header="Création">
+                                                    <div class="grid">
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="1">Reference<span style="color: red;">*</span></label>
+                                                                        <input class="mb-2 mr-2" type="text" pInputText placeholder="Reference"
+                                                                               id="1" [(ngModel)]="paiementDemandesElement.reference" autofocus  [ngClass]="{'ng-invalid ng-dirty' : !validPaiementDemandesReference}"  >
+                                                                        <small class='p-error' *ngIf='!validPaiementDemandesReference'>Reference est obligatoire.</small>
+                                                                    </div>
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="2">Date paiement</label>
+                                                                        <p-calendar appendTo="body" id="2"  [showTime]="true" [showSeconds]="false" placeholder="Date paiement" [(ngModel)]="paiementDemandesElement.datePaiement"
+                                                                                dateFormat="{{dateFormat}}" [showIcon]="true"  ></p-calendar>
+                                                                        
+                                                                    </div>
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="3">Montant</label>
+                                                                        <p-inputNumber class="mb-2 mr-2" id="montant" placeholder="Montant"  [(ngModel)]="paiementDemandesElement.montant"></p-inputNumber>
+                                                                        
+                                                                    </div>
+                                                                    <div class="field col-11 md:col-3">
+                                                                        <label>Mode paiement</label>
+                                                                        <p-dropdown  appendTo="body"  [options]="modePaiements" [(ngModel)]="paiementDemandesElement.modePaiement"
+                                                                                     id="5"  [filter]="true" filterMatchMode="contains" [showClear]="true" optionLabel="libelle"
+                                                                                     placeholder="Mode paiement"  >
+                                                                        </p-dropdown>
+                                                                        
+                                                                    </div>
+                                                                    <div class="col-1">
+                                                                        <label></label>
+                                                                        <button pButton pRipple type="button" icon="pi pi-plus"   (click)="openCreateModePaiement('modePaiement')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                                                    </div>
+
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="6">Description</label>
+                                                                        <input class="mb-2 mr-2" type="text" pInputText placeholder="Description"
+                                                                               id="6" [(ngModel)]="paiementDemandesElement.description" autofocus   >
+                                                                        
+                                                                    </div>
+                                                        <div class="field col-12 md:col-1">
+                                                            <button pButton pRipple type="button" icon="pi pi-plus" class="mt-4" label="OK" (click)="addPaiementDemandes()"></button>
+                                                        </div>
+
+                                                    </div>
+                                            </p-tabPanel>
+                                            <p-tabPanel header="Liste {{item.paiementDemandes?.length > 0 ? '(' + item.paiementDemandes?.length + ')' : ''}}">
+                                                    <div class="card">
+                                                        <p-table [value]="item.paiementDemandes" [scrollable]="true" scrollHeight="200px">
+                                                            <ng-template pTemplate="header">
+                                                                <tr>
+                                                                                <th>Reference</th>
+                                                                                <th>Date paiement</th>
+                                                                                <th>Montant</th>
+                                                                                <th>Mode paiement</th>
+                                                                                <th>Description</th>
+                                                                    <th>Actions</th>
+                                                                </tr>
+                                                            </ng-template>
+                                                            <ng-template pTemplate="body" let-p>
+                                                                <tr>
+                                                                                <td>{{p.reference}}</td>
+                                                                                <td>{{p.datePaiement | date: dateFormatColumn}}</td>
+                                                                                <td>{{p.montant}}</td>
+                                                                            <td>{{p.modePaiement?.libelle}}</td>
+                                                                                <td>{{p.description}}</td>
+                                                                    <td>
+                                                                        <button (click)="deletePaiementDemande(p)" pButton type="button" icon="pi pi-times"  class="p-button-rounded p-button-danger"></button>
+                                                                        <button (click)="editPaiementDemande(p)" pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </ng-template>
+                                                        </p-table>
+                                                    </div>
+
+                                            </p-tabPanel>
+                                        </p-tabView>
+                                    </p-tabPanel>
+
+
+                        </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="grid-step">
+                        <div style="margin-left: auto;">
+                            <button pButton pRipple label="Valider"  *ngIf="validate" icon="pi pi-check" style="margin:10px" (click)="save()"></button>
+                        </div>
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+                        </div>
+
+                </div>
+            </ng-template>
+
+            <app-produit-create-admin></app-produit-create-admin>
+            <app-client-create-admin></app-client-create-admin>
+            <app-livraison-create-admin></app-livraison-create-admin>
+            <app-magasin-create-admin></app-magasin-create-admin>
+            <app-etat-demande-create-admin></app-etat-demande-create-admin>
+
+            <app-produit-create-admin></app-produit-create-admin>
+            <app-mode-paiement-create-admin></app-mode-paiement-create-admin>
+
+    </p-dialog>

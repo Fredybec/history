@@ -1,0 +1,60 @@
+
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70vw'}" header="{{'avoirAchatTabPan' | translate}}" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Information">
+                <div class="grid">
+                    <div class="field col-12 md:col-6">
+                        <label for="1">{{'Date avoir' | translate}}</label>
+                        <p-calendar id="1" [disabled]="true"  [showTime]="true" [showSeconds]="false" placeholder="{{'Date avoir' | translate}}"  [(ngModel)]="item.dateAvoir" dateFormat="{{dateFormat}}"></p-calendar>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="2">{{'Montant' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="2" [disabled]="true" placeholder="{{'Montant' | translate}}" [(ngModel)]="item.montant"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="3">{{'Achat' | translate}}</label>
+                        <p-dropdown [options]="achats" [(ngModel)]="item.achat" id="3" [disabled]="true" optionLabel="reference" placeholder="{{'Achat' | translate}}"></p-dropdown>
+                    </div>
+                </div>
+            </p-tabPanel>
+
+            <p-tabPanel header="{{'Avoir achat items' | translate}}">
+                <div class="grid">
+                    <div class="col">
+                        <div class="card">
+                            <p-table [value]="item.avoirAchatItems" [scrollable]="true" scrollHeight="200px">
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>Produit</th>
+                                        <th>Montant</th>
+                                        <th>Quantite</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-p>
+                                    <tr>
+                                        <td>{{p.produit?.libelle}}</td>
+                                        <td>{{p.montant}}</td>
+                                        <td>{{p.quantite}}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </div>
+                </div>
+            </p-tabPanel>
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="grid-footer">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+

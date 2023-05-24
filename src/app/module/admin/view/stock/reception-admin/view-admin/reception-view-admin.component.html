@@ -1,0 +1,64 @@
+
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70vw'}" header="{{'receptionTabPan' | translate}}" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Information">
+                <div class="grid">
+                    <div class="field col-12 md:col-6">
+                        <label for="1">{{'Commande' | translate}}</label>
+                        <p-dropdown [options]="commandes" [(ngModel)]="item.commande" id="1" [disabled]="true" optionLabel="reference" placeholder="{{'Commande' | translate}}"></p-dropdown>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="2">{{'Date reception' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="2" [disabled]="true" placeholder="{{'Date reception' | translate}}" [(ngModel)]="item.dateReception"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="3">{{'Description' | translate}}</label>
+                        <textarea id="3" pInputTextarea rows="5" cols="30" [disabled]="true" placeholder="{{'Description' | translate}}"  [(ngModel)]="item.description"></textarea>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="5">{{'Etat reception' | translate}}</label>
+                        <p-dropdown [options]="etatReceptions" [(ngModel)]="item.etatReception" id="5" [disabled]="true" optionLabel="libelle" placeholder="{{'Etat reception' | translate}}"></p-dropdown>
+                    </div>
+                </div>
+            </p-tabPanel>
+
+            <p-tabPanel header="{{'Reception items' | translate}}">
+                <div class="grid">
+                    <div class="col">
+                        <div class="card">
+                            <p-table [value]="item.receptionItems" [scrollable]="true" scrollHeight="200px">
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>Produit</th>
+                                        <th>Quantite</th>
+                                        <th>Magasin</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-p>
+                                    <tr>
+                                        <td>{{p.produit?.libelle}}</td>
+                                        <td>{{p.quantite}}</td>
+                                        <td>{{p.magasin?.id}}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </div>
+                </div>
+            </p-tabPanel>
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="grid-footer">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+

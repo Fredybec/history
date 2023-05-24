@@ -1,0 +1,48 @@
+
+<p-dialog [(visible)]="viewDialog" [style]="{width: '70vw'}" header="{{'paiementCommandeTabPan' | translate}}" [modal]="true" styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <p-tabView>
+            <p-tabPanel header="Information">
+                <div class="grid">
+                    <div class="field col-12 md:col-6">
+                        <label for="1">{{'Reference' | translate}}</label>
+                        <input class="mb-2 mr-2" type="text" pInputText [disabled]="true" placeholder="{{'Reference' | translate}}" autofocus  id="1" [(ngModel)]="item.reference">
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="2">{{'Date paiement' | translate}}</label>
+                        <p-calendar id="2" [disabled]="true"  [showTime]="true" [showSeconds]="false" placeholder="{{'Date paiement' | translate}}"  [(ngModel)]="item.datePaiement" dateFormat="{{dateFormat}}"></p-calendar>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="3">{{'Montant' | translate}}</label>
+                        <p-inputNumber class="mb-2 mr-2" id="3" [disabled]="true" placeholder="{{'Montant' | translate}}" [(ngModel)]="item.montant"></p-inputNumber>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="4">{{'Commande' | translate}}</label>
+                        <p-dropdown [options]="commandes" [(ngModel)]="item.commande" id="4" [disabled]="true" optionLabel="reference" placeholder="{{'Commande' | translate}}"></p-dropdown>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="5">{{'Mode paiement' | translate}}</label>
+                        <p-dropdown [options]="modePaiements" [(ngModel)]="item.modePaiement" id="5" [disabled]="true" optionLabel="libelle" placeholder="{{'Mode paiement' | translate}}"></p-dropdown>
+                    </div>
+                    <div class="field col-12 md:col-6">
+                        <label for="6">{{'Description' | translate}}</label>
+                        <textarea id="6" pInputTextarea rows="5" cols="30" [disabled]="true" placeholder="{{'Description' | translate}}"  [(ngModel)]="item.description"></textarea>
+                    </div>
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer" >
+        <div class="grid-footer">
+            <div>
+                <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideViewDialog()"></button>
+            </div>
+        </div>
+    </ng-template>
+</p-dialog>
+
+
+

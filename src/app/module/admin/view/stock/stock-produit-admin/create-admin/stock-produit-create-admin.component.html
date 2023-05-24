@@ -1,0 +1,66 @@
+        <p-dialog [(visible)]="createDialog" [style]="{width: '70vw'}" header="{{'stockProduitTabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                        <p-tabView>
+                            <p-tabPanel header="{{'stockProduitTabPan' | translate}}">
+                                <div class="grid">
+
+                                            <div class="field col-11 md:col-5">
+                                                <label for="1">{{'stockProduitMagasin' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="magasins" [(ngModel)]="item.magasin" id="1" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="id" placeholder="{{'stockProduitMagasin' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+                                                <div class="col-1">
+                                                    <label></label>
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateMagasin('Magasin')" class="p-button-success one-colonne-btn-success-align"></button>
+                                                </div>
+                                            <div class="field col-11 md:col-5">
+                                                <label for="2">{{'stockProduitProduit' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="produits" [(ngModel)]="item.produit" id="2" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="libelle" placeholder="{{'stockProduitProduit' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+                                                <div class="col-1">
+                                                    <label></label>
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateProduit('Produit')" class="p-button-success one-colonne-btn-success-align"></button>
+                                                </div>
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="3">{{'stockProduitQuantite' | translate}}</label>
+                                                    <p-inputNumber class="mb-2 mr-2" id="3" placeholder="{{'stockProduitQuantite' | translate}}" [(ngModel)]="item.quantite"  >
+                                                    </p-inputNumber>
+                                                    
+                                                </div>
+
+                                                <div class="field col-12 md:col-6">
+                                                    <label for="4">{{'stockProduitQuantiteDeffecteuse' | translate}}</label>
+                                                    <p-inputNumber class="mb-2 mr-2" id="4" placeholder="{{'stockProduitQuantiteDeffecteuse' | translate}}" [(ngModel)]="item.quantiteDeffecteuse"  >
+                                                    </p-inputNumber>
+                                                    
+                                                </div>
+
+                                </div>
+                            </p-tabPanel>
+
+                        </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="grid-step">
+                        <div style="margin-left: auto;">
+                            <button pButton pRipple label="Valider"  *ngIf="validate" icon="pi pi-check" style="margin:10px" (click)="save()"></button>
+                        </div>
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+                        </div>
+
+                </div>
+            </ng-template>
+
+            <app-magasin-create-admin></app-magasin-create-admin>
+            <app-produit-create-admin></app-produit-create-admin>
+
+
+    </p-dialog>

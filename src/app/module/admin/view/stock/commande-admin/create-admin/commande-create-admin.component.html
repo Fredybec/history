@@ -1,0 +1,245 @@
+        <p-dialog [(visible)]="createDialog" [style]="{width: '70vw'}" header="{{'commandeTabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                        <p-tabView>
+                            <p-tabPanel header="{{'commandeTabPan' | translate}}">
+                                <div class="grid">
+
+                                                <div class="field col-12 md:col-4">
+                                                    <label for="1">{{'commandeReference' | translate}}<span style="color: red;">*</span></label>
+                                                    <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'commandeReference' | translate}}" id="1" [(ngModel)]="item.reference"
+                                                            [ngClass]="{'ng-invalid ng-dirty' : !validCommandeReference}"  />
+                                                    <small class='p-error' *ngIf='!validCommandeReference'>Reference est obligatoire.</small>
+                                                </div>
+
+
+
+                                                <div class="field col-12 md:col-4">
+                                                    <label for="2">{{'commandeDateCommande' | translate}}</label>
+                                                    <p-calendar appendTo="body" id="2"  [showTime]="true" [showSeconds]="false" placeholder="{{'commandeDateCommande' | translate}}"  [(ngModel)]="item.dateCommande"
+                                                            dateFormat="{{dateFormat}}"  >
+                                                    </p-calendar>
+                                                    
+                                                </div>
+
+                                                <div class="field col-12 md:col-4">
+                                                    <label for="3">{{'commandeTotal' | translate}}</label>
+                                                    <p-inputNumber class="mb-2 mr-2" id="3" placeholder="{{'commandeTotal' | translate}}" [(ngModel)]="item.total"  >
+                                                    </p-inputNumber>
+                                                    
+                                                </div>
+
+                                            <div class="field col-11 md:col-3">
+                                                <label for="4">{{'commandeClient' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="clients" [(ngModel)]="item.client" id="4" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="nom" placeholder="{{'commandeClient' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+                                                <div class="col-1">
+                                                    <label></label>
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateClient('Client')" class="p-button-success one-colonne-btn-success-align"></button>
+                                                </div>
+                                                <div class="field col-12 md:col-4">
+                                                    <label for="5">{{'commandeTotalePaye' | translate}}</label>
+                                                    <p-inputNumber class="mb-2 mr-2" id="5" placeholder="{{'commandeTotalePaye' | translate}}" [(ngModel)]="item.totalePaye"  >
+                                                    </p-inputNumber>
+                                                    
+                                                </div>
+
+                                            <div class="field col-11 md:col-3">
+                                                <label for="8">{{'commandeStore' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="stores" [(ngModel)]="item.store" id="8" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="libelle" placeholder="{{'commandeStore' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+                                                <div class="col-1">
+                                                    <label></label>
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateStore('Store')" class="p-button-success one-colonne-btn-success-align"></button>
+                                                </div>
+                                            <div class="field col-11 md:col-3">
+                                                <label for="9">{{'commandeEtatCommande' | translate}}</label>
+                                                <p-dropdown  appendTo="body"  [options]="etatCommandes" [(ngModel)]="item.etatCommande" id="9" [filter]="true" filterMatchMode="contains"
+                                                        [showClear]="true" optionLabel="libelle" placeholder="{{'commandeEtatCommande' | translate}}"  >
+                                                </p-dropdown>
+                                                
+                                            </div>
+                                                <div class="col-1">
+                                                    <label></label>
+                                                    <button pButton pRipple type="button" icon="pi pi-plus" (click)="openCreateEtatCommande('EtatCommande')" class="p-button-success one-colonne-btn-success-align"></button>
+                                                </div>
+                                </div>
+                            </p-tabPanel>
+                                    <p-tabPanel header="{{'Receptions' | translate}}">
+                                        <p-tabView [(activeIndex)]="activeTab">
+                                            <p-tabPanel header="Création">
+                                                    <div class="grid">
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="2">Date reception</label>
+                                                                        <p-inputNumber class="mb-2 mr-2" id="dateReception" placeholder="Date reception"  [(ngModel)]="receptionsElement.dateReception"></p-inputNumber>
+                                                                        
+                                                                    </div>
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="3">Description</label>
+                                                                        <input class="mb-2 mr-2" type="text" pInputText placeholder="Description"
+                                                                               id="3" [(ngModel)]="receptionsElement.description" autofocus   >
+                                                                        
+                                                                    </div>
+                                                                    <div class="field col-11 md:col-3">
+                                                                        <label>Etat reception</label>
+                                                                        <p-dropdown  appendTo="body"  [options]="etatReceptions" [(ngModel)]="receptionsElement.etatReception"
+                                                                                     id="5"  [filter]="true" filterMatchMode="contains" [showClear]="true" optionLabel="libelle"
+                                                                                     placeholder="Etat reception"  >
+                                                                        </p-dropdown>
+                                                                        
+                                                                    </div>
+                                                                    <div class="col-1">
+                                                                        <label></label>
+                                                                        <button pButton pRipple type="button" icon="pi pi-plus"   (click)="openCreateEtatReception('etatReception')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                                                    </div>
+
+                                                        <div class="field col-12 md:col-1">
+                                                            <button pButton pRipple type="button" icon="pi pi-plus" class="mt-4" label="OK" (click)="addReceptions()"></button>
+                                                        </div>
+
+                                                    </div>
+                                            </p-tabPanel>
+                                            <p-tabPanel header="Liste {{item.receptions?.length > 0 ? '(' + item.receptions?.length + ')' : ''}}">
+                                                    <div class="card">
+                                                        <p-table [value]="item.receptions" [scrollable]="true" scrollHeight="200px">
+                                                            <ng-template pTemplate="header">
+                                                                <tr>
+                                                                                <th>Date reception</th>
+                                                                                <th>Description</th>
+                                                                                <th>Etat reception</th>
+                                                                    <th>Actions</th>
+                                                                </tr>
+                                                            </ng-template>
+                                                            <ng-template pTemplate="body" let-p>
+                                                                <tr>
+                                                                                <td>{{p.dateReception}}</td>
+                                                                                <td>{{p.description}}</td>
+                                                                            <td>{{p.etatReception?.libelle}}</td>
+                                                                    <td>
+                                                                        <button (click)="deleteReception(p)" pButton type="button" icon="pi pi-times"  class="p-button-rounded p-button-danger"></button>
+                                                                        <button (click)="editReception(p)" pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </ng-template>
+                                                        </p-table>
+                                                    </div>
+
+                                            </p-tabPanel>
+                                        </p-tabView>
+                                    </p-tabPanel>
+
+                                    <p-tabPanel header="{{'Commande items' | translate}}">
+                                        <p-tabView [(activeIndex)]="activeTab">
+                                            <p-tabPanel header="Création">
+                                                    <div class="grid">
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="1">Prix</label>
+                                                                        <p-inputNumber class="mb-2 mr-2" id="prix" placeholder="Prix"  [(ngModel)]="commandeItemsElement.prix"></p-inputNumber>
+                                                                        
+                                                                    </div>
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="2">Quantite</label>
+                                                                        <p-inputNumber class="mb-2 mr-2" id="quantite" placeholder="Quantite"  [(ngModel)]="commandeItemsElement.quantite"></p-inputNumber>
+                                                                        
+                                                                    </div>
+                                                                    <div class="field col-12 md:col-4">
+                                                                        <label for="3">Quantite receptionne</label>
+                                                                        <p-inputNumber class="mb-2 mr-2" id="quantiteReceptionne" placeholder="Quantite receptionne"  [(ngModel)]="commandeItemsElement.quantiteReceptionne"></p-inputNumber>
+                                                                        
+                                                                    </div>
+                                                                    <div class="field col-11 md:col-3">
+                                                                        <label>Produit</label>
+                                                                        <p-dropdown  appendTo="body"  [options]="produits" [(ngModel)]="commandeItemsElement.produit"
+                                                                                     id="4"  [filter]="true" filterMatchMode="contains" [showClear]="true" optionLabel="libelle"
+                                                                                     placeholder="Produit"  >
+                                                                        </p-dropdown>
+                                                                        
+                                                                    </div>
+                                                                    <div class="col-1">
+                                                                        <label></label>
+                                                                        <button pButton pRipple type="button" icon="pi pi-plus"   (click)="openCreateProduit('produit')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                                                    </div>
+
+                                                                    <div class="field col-11 md:col-3">
+                                                                        <label>Etat commande</label>
+                                                                        <p-dropdown  appendTo="body"  [options]="etatCommandes" [(ngModel)]="commandeItemsElement.etatCommande"
+                                                                                     id="6"  [filter]="true" filterMatchMode="contains" [showClear]="true" optionLabel="libelle"
+                                                                                     placeholder="Etat commande"  >
+                                                                        </p-dropdown>
+                                                                        
+                                                                    </div>
+                                                                    <div class="col-1">
+                                                                        <label></label>
+                                                                        <button pButton pRipple type="button" icon="pi pi-plus"   (click)="openCreateEtatCommande('etatCommande')"  class="p-button-success one-colonne-btn-success-align"></button>
+                                                                    </div>
+
+                                                        <div class="field col-12 md:col-1">
+                                                            <button pButton pRipple type="button" icon="pi pi-plus" class="mt-4" label="OK" (click)="addCommandeItems()"></button>
+                                                        </div>
+
+                                                    </div>
+                                            </p-tabPanel>
+                                            <p-tabPanel header="Liste {{item.commandeItems?.length > 0 ? '(' + item.commandeItems?.length + ')' : ''}}">
+                                                    <div class="card">
+                                                        <p-table [value]="item.commandeItems" [scrollable]="true" scrollHeight="200px">
+                                                            <ng-template pTemplate="header">
+                                                                <tr>
+                                                                                <th>Prix</th>
+                                                                                <th>Quantite</th>
+                                                                                <th>Quantite receptionne</th>
+                                                                                <th>Produit</th>
+                                                                                <th>Etat commande</th>
+                                                                    <th>Actions</th>
+                                                                </tr>
+                                                            </ng-template>
+                                                            <ng-template pTemplate="body" let-p>
+                                                                <tr>
+                                                                                <td>{{p.prix}}</td>
+                                                                                <td>{{p.quantite}}</td>
+                                                                                <td>{{p.quantiteReceptionne}}</td>
+                                                                            <td>{{p.produit?.libelle}}</td>
+                                                                            <td>{{p.etatCommande?.libelle}}</td>
+                                                                    <td>
+                                                                        <button (click)="deleteCommandeItem(p)" pButton type="button" icon="pi pi-times"  class="p-button-rounded p-button-danger"></button>
+                                                                        <button (click)="editCommandeItem(p)" pButton type="button" icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2"></button>
+                                                                    </td>
+                                                                </tr>
+                                                            </ng-template>
+                                                        </p-table>
+                                                    </div>
+
+                                            </p-tabPanel>
+                                        </p-tabView>
+                                    </p-tabPanel>
+
+
+                        </p-tabView>
+
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="grid-step">
+                        <div style="margin-left: auto;">
+                            <button pButton pRipple label="Valider"  *ngIf="validate" icon="pi pi-check" style="margin:10px" (click)="save()"></button>
+                        </div>
+                        <div>
+                            <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+                        </div>
+
+                </div>
+            </ng-template>
+
+            <app-client-create-admin></app-client-create-admin>
+            <app-store-create-admin></app-store-create-admin>
+            <app-etat-commande-create-admin></app-etat-commande-create-admin>
+
+            <app-etat-reception-create-admin></app-etat-reception-create-admin>
+            <app-produit-create-admin></app-produit-create-admin>
+            <app-etat-commande-create-admin></app-etat-commande-create-admin>
+
+    </p-dialog>
